@@ -1,0 +1,67 @@
+.section {
+  margin-top: 3.5rem;
+}
+
+.carouselWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.scroller {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(200px, 240px);
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0.5rem 0;
+  scrollbar-width: none;
+}
+
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.scroller > * {
+  scroll-snap-align: start;
+}
+
+.arrow {
+  border: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  background: #111111;
+  color: #ffffff;
+  font-size: 1.5rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.arrow:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .arrow {
+    display: none;
+  }
+
+  .scroller {
+    grid-auto-columns: minmax(160px, 200px);
+    overflow-x: scroll;
+    gap: 1rem;
+    padding: 0.25rem 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    margin-top: 2.5rem;
+  }
+}

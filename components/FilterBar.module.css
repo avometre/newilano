@@ -1,0 +1,107 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: var(--card-shadow);
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.group input {
+  border-radius: 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 0.65rem 1rem;
+  font-size: 0.95rem;
+}
+
+.group input:focus {
+  outline: none;
+  border-color: #111111;
+}
+
+.group input::-webkit-search-decoration,
+.group input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+.label {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary);
+}
+
+.groupInline {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.fieldset legend {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-right: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.chip,
+.chipActive {
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 0.4rem 0.95rem;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.chip:hover {
+  border-color: rgba(17, 17, 17, 0.4);
+}
+
+.chipActive {
+  border-color: #111111;
+  background: #111111;
+  color: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .wrap {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .groupInline {
+    grid-template-columns: 1fr;
+  }
+
+  .fieldset {
+    justify-content: flex-start;
+  }
+
+  .fieldset legend {
+    width: 100%;
+  }
+}

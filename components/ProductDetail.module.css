@@ -1,0 +1,246 @@
+.section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(2rem, 6vw, 3.5rem);
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.mainImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 1.6rem;
+  overflow: hidden;
+  background: radial-gradient(circle at 25% 20%, #fdfdfd 0%, #e7ebf5 100%);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+}
+
+.mainImage img {
+  object-fit: cover;
+}
+
+.thumbnailRow {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.thumbnail {
+  position: relative;
+  width: 110px;
+  aspect-ratio: 1;
+  border-radius: 1.1rem;
+  overflow: hidden;
+  background: #f6f7fb;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  display: inline-flex;
+  padding: 0;
+  margin: 0;
+  align-items: stretch;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.thumbnail img {
+  object-fit: cover;
+}
+
+.thumbnailActive {
+  border-color: #111111;
+  box-shadow: 0 0 0 4px rgba(17, 17, 17, 0.1);
+}
+
+.thumbnail:focus-visible {
+  outline: 2px solid #111111;
+  outline-offset: 2px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.brand {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  line-height: 1.1;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.description {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.ctaGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.9rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.primaryButton {
+  background: #111111;
+  color: #ffffff;
+  border: 1px solid #111111;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(17, 17, 17, 0.25);
+}
+
+.secondaryButton {
+  background: #ffffff;
+  color: #111111;
+  border: 1px solid rgba(17, 17, 17, 0.2);
+}
+
+.secondaryButton:hover {
+  border-color: #111111;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(17, 17, 17, 0.12);
+}
+
+.secondaryButtonActive {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+}
+
+.secondaryButtonActive svg {
+  stroke: #ffffff;
+}
+
+.share {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.share span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary);
+}
+
+.metaList {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.metaList div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.metaList span {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.metaList strong {
+  font-size: 0.95rem;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.features h2 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0;
+}
+
+.features ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 780px) {
+  .ctaGroup {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .metaList div {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    gap: 2rem;
+  }
+
+  .mainImage {
+    border-radius: 1.35rem;
+  }
+
+  .thumbnail {
+    width: 88px;
+    border-radius: 0.9rem;
+  }
+
+  .title {
+    font-size: clamp(1.8rem, 9vw, 2.2rem);
+  }
+
+  .price {
+    font-size: 1.6rem;
+  }
+
+  .shareList {
+    gap: 0.55rem;
+  }
+}

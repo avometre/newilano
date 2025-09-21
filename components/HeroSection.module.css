@@ -1,0 +1,134 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: clamp(22rem, 60vw, 32rem);
+  margin-bottom: 3rem;
+  overflow: hidden;
+  border-radius: 0 0 2.5rem 2.5rem;
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+}
+
+.media img {
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(17, 17, 17, 0.65) 0%, rgba(17, 17, 17, 0.2) 60%, transparent 100%);
+}
+
+.content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.textBox {
+  max-width: 32rem;
+  color: #ffffff;
+  padding: 2.5rem 0;
+}
+
+.textBox h1 {
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  margin: 0 0 1rem;
+}
+
+.textBox p {
+  margin: 0 0 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #111111;
+  font-weight: 600;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.25);
+}
+
+.dots {
+  position: absolute;
+  left: 50%;
+  bottom: 1.25rem;
+  display: flex;
+  gap: 0.45rem;
+  transform: translateX(-50%);
+}
+
+.dot,
+.dotActive {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.45);
+  transition: all 0.2s ease;
+}
+
+.dotActive {
+  width: 1.5rem;
+  background: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    border-radius: 0 0 1.5rem 1.5rem;
+    margin-bottom: 2.5rem;
+    height: clamp(22rem, 90vw, 28rem);
+  }
+
+  .textBox {
+    max-width: 26rem;
+    padding: 2rem 0 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .textBox {
+    max-width: none;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .textBox h1 {
+    font-size: clamp(2.1rem, 9vw, 2.6rem);
+  }
+
+  .textBox p {
+    font-size: 0.95rem;
+  }
+
+  .dots {
+    bottom: 0.9rem;
+  }
+}
